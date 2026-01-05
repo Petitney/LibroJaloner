@@ -1,0 +1,136 @@
+body {
+  background: #2b2b2b;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 10px 0;           /* menos padding arriba y abajo */
+  font-family: "Gramond", serif;
+}
+
+/* Página */
+.page {
+  width: 150mm;
+  height: 210mm;
+  background: #fdfcf9;
+  color: #111;
+  box-shadow: 0 0 40px rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+  padding: 10mm 0;            /* algo de margen interno */
+  overflow: hidden;
+}
+
+/* Cabecera */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  padding: 2mm 20mm 0;        /* más pegado arriba */
+  opacity: 0.6;
+  line-height: 1.2;
+}
+
+/* Contenedor del verso y video */
+.content {
+  flex: 1;
+  padding: 0 20mm 5mm;        /* menos padding superior */
+  font-size: 1.05rem;
+  line-height: 1.5;           /* reduce espacio entre líneas */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start; /* pega todo al top */
+}
+
+/* Título del libro */
+.book-title {
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+  margin: 15mm 0 4mm 0;  /* margen superior más grande para bajar el título */
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.book-round {
+  display: block;          /* hace que aparezca en una nueva línea */
+  font-size: 1.2rem;       /* tamaño menor que el título */
+  font-weight: normal;     /* opcional: menos negrita */
+  opacity: 0.7;            /* un poco más tenue */
+  margin-top: 0.5rem;      /* espacio entre título y "Round I" */
+}
+
+
+.verse {
+  text-align: justify;
+  margin: 0;
+  cursor: default;
+  white-space: pre-wrap;  
+  text-indent: 0;
+  line-height: 1.4;
+  width: 100%;             /* ocupa todo el ancho del content */
+  max-width: 100%;         /* asegurarse que no se desplace */
+}
+
+
+/* Ilustración / video */
+.illustration {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  margin: 2mm 0 0 0;
+}
+
+.illustration img,
+.illustration video {
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+}
+
+.illustration video {
+  display: none;
+}
+
+/* Botón de cerrar */
+.illustration button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  border: none;
+  font-size: 1rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Pie de página */
+.page-footer {
+  text-align: center;
+  font-size: 0.7rem;
+  opacity: 0.5;
+  margin-top: auto;
+  padding: 2mm 0 4mm 0;       /* menos espacio extra */
+}
+
+
+
+.illustration img {
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+
+  /* blanco y negro por defecto */
+  filter: grayscale(100%);
+  transition: filter 0.5s ease; /* transición suave */
+}
+
+/* Cuando el ratón pasa sobre la imagen */
+.illustration img:hover {
+  filter: none;  /* vuelve a color */
+}
